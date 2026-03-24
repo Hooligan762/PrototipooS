@@ -1476,6 +1476,17 @@ body                { font-family:'DM Sans',system-ui,sans-serif !important; fon
 .nav                { flex:1 !important; overflow-y:auto !important; padding:8px !important; display:block !important; border:none !important; }
 .content            { flex:1 !important; padding:24px 28px !important; }
 .topbar             { flex-shrink:0 !important; display:flex !important; align-items:center !important; height:56px !important; padding:0 24px !important; position:sticky !important; top:0 !important; z-index:100 !important; }
+
+/* ── CORREÇÃO MOBILE — desfaz os !important acima em telas pequenas ── */
+@media (max-width: 768px) {
+  .shell   { flex-direction:column !important; }
+  .sidebar { position:fixed !important; left:-280px !important; top:0 !important; bottom:0 !important; width:252px !important; min-width:252px !important; max-width:252px !important; height:100vh !important; z-index:200 !important; transition:left .25s cubic-bezier(.2,.8,.4,1) !important; }
+  .sidebar.open { left:0 !important; }
+  .main    { width:100% !important; height:100vh !important; }
+  .content { padding:12px 14px !important; }
+  .topbar  { padding:0 12px !important; height:50px !important; }
+  .mob-btn { display:flex !important; align-items:center !important; justify-content:center !important; }
+}
 .footer             { flex-shrink:0 !important; }
 
 /* Overlay / modal protegido */
